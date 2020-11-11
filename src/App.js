@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import Navigation from './Navigation/Navigation'
 import Home from './Home/Home'
-import Noms from './Noms/Noms'
+import Noms from './NomList/NomList'
 import Recipe from './Recipes/Recipes'
 import Users from './Users/Users'
 import Error from './Error'
 import NomsContext from './NomsContext'
+import config from './config'
 
 class App extends Component {
   state = {
@@ -32,7 +33,7 @@ class App extends Component {
       nom.id !== nomId  
     )
     this.setState({
-      bookmarks: newNoms
+      noms: newNoms
     })
   }
 
@@ -60,7 +61,7 @@ class App extends Component {
   updateNom = updatedNom => {
     this.setState({
       noms: this.state.noms.map(nom =>
-        (bm.id !== updatedNom.id) ? nom : updatedNom
+        (nom.id !== updatedNom.id) ? nom : updatedNom
       )
     })
   }
@@ -72,23 +73,20 @@ class App extends Component {
       deleteNom: this.deleteNom,
       updatedNom: this.updateNom
     }
-  
     return (
       <main className='App'>
-        <NomsContext value={contextValue}>
+        <NomsContext.Provider value={contextValue}>
           <Navigation />
           <div>
             <Route exact path='/' component={Home} />
-            <Route path='/noms' component={Noms} />
+            <Route path='/nomlist' component={Noms} />
             <Route path='/recipes/:recipe_id' component={Recipe} />
             <Route path='/users/:user_id' component={Users} />
             <Route component={Error} />
           </div>
-        </NomsContext>
+        </NomsContext.Provider>
       </main>
-      
-    );
-  
+    )
   }
 }
 

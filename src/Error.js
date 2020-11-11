@@ -1,7 +1,7 @@
 // Error.js
 
 import React from 'react'
-
+//add context consumer here
 export default function Error() {
     return (
         <div className='error'>
