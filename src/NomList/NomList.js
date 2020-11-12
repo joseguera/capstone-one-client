@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import NomsContext from '../NomsContext';
-import BookmarkItem from '../BookmarkItem/BookmarkItem';
-import './BookmarkList.css'
+import NomItem from '../NomItem/NomItem';
+import './NomList.css'
 
 export default function Noms() {
     return(
@@ -12,6 +12,3 @@ export default function Noms() {
         </div>
     )
 }
-
-
-export default Noms;

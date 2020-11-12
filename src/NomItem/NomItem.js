@@ -38,13 +38,45 @@ export default function NomItem(props) {
                                 href={props.url}
                                 target='_blank'
                                 rel='noopener noreferrer'>
-                                {props.title}
+                                {props.nom_name}
                             </a>
                         </h3>
                     </div>
-                    <p></p>
+                    <p className='NomItem_description'>
+                        {props.description}
+                    </p>
+                    <div className='NomItem_buttons'>
+                        <Link to={`/edit/${props.id}`}>
+                            Edit
+                        </Link>
+                        {' '}
+                        <button
+                            className='NomItem_description'
+                            onClick={() =>
+                                deleteNomRequest(props.id, context.deleteNom)
+                            }
+                        >
+                            Delete
+                        </button>
+                    </div>
                 </li>
             )}
         </NomsContext.Consumer>
     )
+}
+
+NomItem.defaultProps = {
+    onClickDelete: () => { },
+}
+
+NomItem.propTypes = {
+    id: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]).isRequired,
+    nom_name: PropTypes.string.isRequired,
+    sub: PropTypes.string.isRequired,
+    url: PropTypes.string,
+    desciption: PropTypes.string,
+    onClickDelete: PropTypes.func,
 }
