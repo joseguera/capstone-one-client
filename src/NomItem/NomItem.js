@@ -46,7 +46,7 @@ export default function NomItem(props) {
                         {props.description}
                     </p>
                     <div className='NomItem_buttons'>
-                        <Link to={`/edit/${props.id}`}>
+                        <Link to={`/edit-nom/${props.id}`}>
                             Edit
                         </Link>
                         {' '}

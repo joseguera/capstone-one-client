@@ -4,6 +4,7 @@ import Navigation from './Navigation/Navigation'
 import Home from './Home/Home'
 import NomList from './NomList/NomList'
 import AddNom from './AddNom/AddNom'
+import EditNom from './EditNom/EditNom'
 import Recipe from './Recipes/Recipes'
 import Users from './Users/Users'
 import Error from './Error'
@@ -82,6 +83,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/nomlist' component={NomList} />
             <Route path='/add-nom' component={AddNom} />
+            <Route path='/edit-nom/:nomId' component={EditNom} />
             <Route path='/recipes/:recipe_id' component={Recipe} />
             <Route path='/users/:user_id' component={Users} />
             <Route component={Error} />

@@ -1,0 +1,32 @@
+.EditNom__form {
+    text-align: left;
+  }
+  
+  .EditNom__form input,
+  .EditNom__form textarea {
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    /* minus side padding and border */
+    width: calc(100% - 16px - 2px);
+    padding: 5px 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .EditNom__form label {
+    margin-top: 10px;
+  }
+  
+  .EditNom__buttons {
+    text-align: center;
+  }
+  
+  .EditNom__required {
+    color: #a51414;
+  }
+  
+  .EditNom__error p {
+    color: #a51414;
+    margin-bottom: 5px;
+  }
