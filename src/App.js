@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import Navigation from './Navigation/Navigation'
 import Home from './Home/Home'
-import Noms from './NomList/NomList'
+import NomList from './NomList/NomList'
+import AddNom from './AddNom/AddNom'
 import Recipe from './Recipes/Recipes'
 import Users from './Users/Users'
 import Error from './Error'
@@ -79,7 +80,8 @@ class App extends Component {
           <Navigation />
           <div>
             <Route exact path='/' component={Home} />
-            <Route path='/nomlist' component={Noms} />
+            <Route path='/nomlist' component={NomList} />
+            <Route path='/add-nom' component={AddNom} />
             <Route path='/recipes/:recipe_id' component={Recipe} />
             <Route path='/users/:user_id' component={Users} />
             <Route component={Error} />

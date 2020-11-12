@@ -6,7 +6,7 @@ export default function Recipes() {
     return (
         <div className='recipes'>
             <h2>Your Recipes</h2>
-            <h6>Checkout Recipe number: {meta}</h6>
+            <h6>Checkout Your Recipe number: {meta}</h6>
         </div>
     )
 }
