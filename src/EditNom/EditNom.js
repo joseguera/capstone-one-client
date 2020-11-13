@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import NomsContext from '../NomsContext';
+import NomNomsContext from '../NomNomsContext';
 import config from '../config'
 import './EditNom.css';
 
@@ -18,7 +18,7 @@ class EditNom extends Component {
         }).isRequired,
     };
 
-    static contextType = NomsContext;
+    static contextType = NomNomsContext;
 
     state = {
         error: null,
@@ -31,11 +31,7 @@ class EditNom extends Component {
 
     componentDidMount() {
         const { nomId } = this.props.match.params;
-        console.log(nomId)
-        console.log(config.API_KEY)
-        const url = config.API_ENDPOINT + `/noms/${nomId}`;
-        console.log(url);
-        fetch(url, {
+        fetch(config.API_ENDPOINT + `/noms/${nomId}`, {
             method: 'GET',
             headers: {
               'content-type': 'application/json',
@@ -90,7 +86,7 @@ class EditNom extends Component {
             body: JSON.stringify(newNom),
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_KEY}`
+                'authorization': `Bearer ${config.API_KEY}`
             },
         })
             .then(res => {
@@ -174,14 +170,12 @@ class EditNom extends Component {
                         <label htmlFor='url'>
                             URL
                             {' '}
-                            <Required />
                         </label>
                         <input
                             type='url'
                             name='url'
                             id='url'
                             placeholder='http//:www.vegan-honey.com'
-                            required
                             value={url}
                             onChange={this.handleChangeUrl}
                         />

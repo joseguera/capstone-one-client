@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import NomNomsContext from '../NomNomsContext';
 import config from '../config';
-import './AddNom.css'
+import './AddRecipe.css'
 
 const Required = () => (
-    <span className='AddNom_required'>*</span>
+    <span className='AddRecipe_required'>*</span>
 )
 
-class AddNom extends Component {
+class AddRecipe extends Component {
     static propTypes = {
         history: PropTypes.shape({
             push: PropTypes.func,
@@ -24,17 +24,15 @@ class AddNom extends Component {
     handleSubmit = e => {
         e.preventDefault()
         // get the form fields from the event
-        const { nom_name, sub, url, description } = e.target;
-        const nom = {
-            nom_name: nom_name.value,
-            sub: sub.value,
-            url: url.value,
-            description: description.value
+        const { recipe_name, description, author } = e.target;
+        const recipe = {
+            recipe_name: recipe_name.value,
+            description: description.value,
         }
         this.setState({ error: null })
-        fetch(config.API_ENDPOINT + `/noms`, {
+        fetch(config.API_ENDPOINT + `/recipes`, {
             method: 'POST',
-            body: JSON.stringify(nom),
+            body: JSON.stringify(recipe),
             headers: {
                 'content-type': 'application/json',
                 'authorization': `bearer ${config.API_KEY}`
@@ -45,14 +43,15 @@ class AddNom extends Component {
                     return res.json().then(error => Promise.reject(error))
                 }
                 return res.json()
-            })
+            })                
             .then(data => {
-                nom_name.value = ''
-                sub.value = ''
-                url.value = ''
+                this.setState({
+                    author: data.author
+                })
+                recipe_name.value = ''
                 description.value = ''
-                this.context.addNom(data)
-                this.props.history.push('/nomlist')
+                this.context.addRecipe(data)
+                this.props.history.push('/recipelist')
             })
             .catch(error => {
                 console.error(error)
@@ -61,60 +60,32 @@ class AddNom extends Component {
     }
 
     handleClickCancel = () => {
-        this.props.history.push('/nomlist')
+        this.props.history.push('/recipelist')
     }
 
     render() {
         const { error } = this.state;
         return (
-            <section className='AddNom'>
-                <h2>Create a nom</h2>
+            <section className='AddRecipe'>
+                <h2>Create a recipe</h2>
                 <form
-                    className='AddNom_form'
+                    className='AddRecipe_form'
                     onSubmit={this.handleSubmit}
                 >
-                    <div className='AddNom_error' role='alert'>
+                    <div className='AddRecipe_error' role='alert'>
                         {error && <p>{error.message}</p>}
                     </div>
                     <div>
-                        <label htmlFor='nom_name'> 
-                            Nom Name
+                        <label htmlFor='recipe_name'> 
+                            Recipe Name
                             {' '}
                             <Required />
                         </label>
                         <input 
                             type='text'
-                            name='nom_name'
-                            id='nom_name'
+                            name='recipe_name'
+                            id='recipe_name'
                             placeholder='Vegan honey'
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='sub'>
-                            Sub
-                            {' '}
-                            <Required />
-                        </label>
-                        <input 
-                            type='text'
-                            name='sub'
-                            id='sub'
-                            placeholder='honey'
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor='url'>
-                            URL
-                            {' '}
-                            <Required />
-                        </label>
-                        <input 
-                            type='url'
-                            name='url'
-                            id='url'
-                            placeholder='https://www.veganhoney.com'
                             required
                         />
                     </div>
@@ -127,10 +98,14 @@ class AddNom extends Component {
                             id='description'
                         />
                     </div>
-                    
-                    {/* TO DO: Add recipe_id REQUIREMENT in order to match Noms to Recipes */}
-                    
-                    <div className='AddNom_buttons'>
+                    <div>
+                        <input 
+                            type='hidden'
+                            name='id'
+                        />
+                    </div>
+                    <p>Add Nom (feature goes here)</p>                    
+                    <div className='AddRecipe_buttons'>
                         <button type='button' onClick={this.handleClickCancel}>
                             Cancel
                         </button>
@@ -145,4 +120,4 @@ class AddNom extends Component {
     }
 }
 
-export default AddNom;
+export default AddRecipe;

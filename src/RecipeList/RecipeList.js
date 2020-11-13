@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import NomNomsContext from '../NomNomsContext';
-import NomItem from '../NomItem/NomItem';
-import './NomList.css';
+import RecipeItem from '../RecipeItem/RecipeItem';
+import './RecipeList.css';
 
-class NomList extends Component {
+class RecipeList extends Component {
     static propTypes = {
-        noms: PropTypes.arrayOf(
+        recipes: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.oneOfType([
                     PropTypes.number,
@@ -18,23 +18,23 @@ class NomList extends Component {
     };
 
     static defaultProps = {
-        noms: []
+        recipes: []
     };
 
     static contextType = NomNomsContext;
 
     render() {
-        const { noms } = this.context;
+        const { recipes } = this.context;
         return (
-            <section className='NomList'>
-                <h2>My Noms</h2>
-                <Link to={'/add-nom'}><h3>Add Nom</h3></Link>
+            <section className='RecipeList'>
+                <h2>My Recipes</h2>
+                <Link to={'/add-recipe'}><h3>Add Recipe</h3></Link>
                 {' '}
-                <ul className='NomList_list' aria-live='polite'>
-                    {noms.map(nom =>
-                        <NomItem
-                            key={nom.id}
-                            {...nom}
+                <ul className='RecipeList_list' aria-live='polite'>
+                    {recipes.map(recipe =>
+                        <RecipeItem
+                            key={recipe.id}
+                            {...recipe}
                         />
                     )}
                 </ul>
@@ -43,4 +43,4 @@ class NomList extends Component {
     }
 }
 
-export default NomList;
+export default RecipeList;
