@@ -6,21 +6,16 @@ import config from '../config';
 import './NomItem.css';
 
 function deleteNomRequest(nomId, cb) {
-    fetch(config.API_ENDPOINT + `/${nomId}`, {
+    fetch(config.API_ENDPOINT + `/noms/${nomId}`, {
         method: 'DELETE',
         headers: {
             'content-type': 'application/json',
-            'authorization': `bearer ${config.API_KEY}`
+            'authorization': `${config.API_KEY}`
         }
-    })
-    .then(res => {
-        if (!res.ok) {
-            return res.json().then(error => Promise.reject(error))
-        }
-        return res.json()
     })
     .then(data => {
         cb(nomId)
+        window.location = '/nomlist'
     })
     .catch(error => {
         console.error(error)

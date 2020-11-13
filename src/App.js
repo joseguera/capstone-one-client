@@ -40,7 +40,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(config.API_ENDPOINT, {
+    fetch(config.API_ENDPOINT  + `/noms`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

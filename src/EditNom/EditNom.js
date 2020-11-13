@@ -31,10 +31,15 @@ class EditNom extends Component {
 
     componentDidMount() {
         const { nomId } = this.props.match.params;
-        fetch(config.API_ENDPOINT + `/${nomId}`, {
+        console.log(nomId)
+        console.log(config.API_KEY)
+        const url = config.API_ENDPOINT + `/noms/${nomId}`;
+        console.log(url);
+        fetch(url, {
             method: 'GET',
-            header: {
-                'authorization': `Bearer ${config.API_KEY}`
+            headers: {
+              'content-type': 'application/json',
+              'Authorization': `Bearer ${config.API_KEY}`
             }
         })
             .then(res => {
@@ -51,6 +56,7 @@ class EditNom extends Component {
                     url: responseData.url,
                     description: responseData.description
                 })
+            console.log(this.state)
             })
             .catch(error => {
                 console.error(error)
@@ -79,12 +85,12 @@ class EditNom extends Component {
         const { nomId } = this.props.match.params;
         const { id, nom_name, sub, url, description } = this.state;
         const newNom = { id, nom_name, sub, url, description };
-        fetch(config.API_ENDPOINT + `/${nomId}`, {
+        fetch(config.API_ENDPOINT + `/noms/${nomId}`, {
             method: 'PATCH',
             body: JSON.stringify(newNom),
             headers: {
                 'content-type': 'application/json',
-                'authorization': `Bearer ${config.API_KEY}`
+                'Authorization': `Bearer ${config.API_KEY}`
             },
         })
             .then(res => {
