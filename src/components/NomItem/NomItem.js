@@ -1,54 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import NomNomsContext from '../NomNomsContext';
-import config from '../config';
-import './RecipeItem.css';
+import TokenService from '../../services/token-service'
+import NomNomsContext from '../../context/NomNomsContext';
+import config from '../../config';
+import './NomItem.css';
 
-function deleteRecipeRequest(recipeId, cb) {
-    fetch(config.API_ENDPOINT + `/recipes/${recipeId}`, {
+function deleteNomRequest(nomId, cb) {
+    fetch(config.API_ENDPOINT + `/noms/${nomId}`, {
         method: 'DELETE',
         headers: {
             'content-type': 'application/json',
-            'authorization': `Bearer ${config.API_KEY}`
+            'authorization': `basic ${TokenService.getAuthToken()}`,        
         }
     })
         .then(data => {
-            cb(recipeId)
-            window.location = '/recipelist'
+            cb(nomId)
+            // window.location = '/nomlist'
         })
         .catch(error => {
             console.error(error)
         })
 }
 
-export default function RecipeItem(props) {
+export default function NomItem(props) {
     return (
         <NomNomsContext.Consumer>
             {(context) => (
-                <li className='RecipeItem'>
-                    <div className='RecipeItem_row'>
-                        <h3 className='RecipeItem_title'>
+                <li className='NomItem'>
+                    <div className='NomItem_row'>
+                        <h3 className='NomItem_title'>
                             <a
                                 href={props.url}
                                 target='_blank'
                                 rel='noopener noreferrer'>
-                                {props.recipe_name}
+                                {props.nom_name}
                             </a>
                         </h3>
                     </div>
-                    <p className='RecipeItem_description'>
+                    <p className='NomItem_description'>
                         {props.description}
                     </p>
-                    <div className='RecipeItem_buttons'>
-                        <Link to={`/edit-recipe/${props.id}`}>
+                    <div className='NomItem_buttons'>
+                        <Link to={`/edit-nom/${props.id}`}>
                             Edit
                         </Link>
                         {' '}
                         <button
-                            className='RecipeItem_description'
+                            className='NomItem_description'
                             onClick={() =>
-                                deleteRecipeRequest(props.id, context.deleteRecipe)
+                                deleteNomRequest(props.id, context.deleteNom)
                             }
                         >
                             Delete
@@ -60,16 +61,16 @@ export default function RecipeItem(props) {
     )
 }
 
-RecipeItem.defaultProps = {
+NomItem.defaultProps = {
     onClickDelete: () => { },
 }
 
-RecipeItem.propTypes = {
+NomItem.propTypes = {
     id: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]).isRequired,
-    recipe_name: PropTypes.string.isRequired,
+    nom_name: PropTypes.string.isRequired,
     sub: PropTypes.string.isRequired,
     url: PropTypes.string,
     desciption: PropTypes.string,

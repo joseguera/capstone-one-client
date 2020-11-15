@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import NomNomsContext from '../NomNomsContext';
-import NomItem from '../NomItem/NomItem';
+import NomNomsContext from '../../context/NomNomsContext';
+import NomItem from '../../components/NomItem/NomItem';
 import './NomList.css';
 
 class NomList extends Component {

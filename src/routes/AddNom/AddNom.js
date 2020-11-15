@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import NomNomsContext from '../NomNomsContext';
-import config from '../config';
+import NomNomsContext from '../../context/NomNomsContext';
+import config from '../../config';
+import TokenService from '../../services/token-service'
 import './AddNom.css'
 
 const Required = () => (
@@ -37,7 +38,7 @@ class AddNom extends Component {
             body: JSON.stringify(nom),
             headers: {
                 'content-type': 'application/json',
-                'authorization': `bearer ${config.API_KEY}`
+                'authorization': `basic ${TokenService.getAuthToken()}`,
             }
         })
             .then(res => {

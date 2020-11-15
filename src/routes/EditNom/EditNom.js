@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import NomNomsContext from '../NomNomsContext';
-import config from '../config'
+import TokenService from '../../services/token-service'
+import NomNomsContext from '../../context/NomNomsContext';
+import config from '../../config'
 import './EditNom.css';
 
 const Required = () => (
@@ -35,7 +36,7 @@ class EditNom extends Component {
             method: 'GET',
             headers: {
               'content-type': 'application/json',
-              'Authorization': `Bearer ${config.API_KEY}`
+              'authorization': `basic ${TokenService.getAuthToken()}`,            
             }
         })
             .then(res => {
@@ -86,7 +87,7 @@ class EditNom extends Component {
             body: JSON.stringify(newNom),
             headers: {
                 'content-type': 'application/json',
-                'authorization': `Bearer ${config.API_KEY}`
+                'Authorization': `Bearer ${config.API_KEY}`
             },
         })
             .then(res => {
