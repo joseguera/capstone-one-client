@@ -87,7 +87,7 @@ class EditNom extends Component {
             body: JSON.stringify(newNom),
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `Bearer ${config.API_KEY}`
+                'Authorization': `basic ${TokenService.getAuthToken()}`,
             },
         })
             .then(res => {
