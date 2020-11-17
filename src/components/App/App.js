@@ -5,6 +5,7 @@ import TokenService from '../../services/token-service'
 import Navigation from '../../components/Navigation/Navigation'
 import Home from '../../routes/Home/Home'
 import NomList from '../../routes/NomList/NomList'
+import NomPage from '../../routes/NomPage/NomPage'
 import AddNom from '../../routes/AddNom/AddNom'
 import EditNom from '../../routes/EditNom/EditNom'
 import LoginPage from '../../routes/LoginPage/LoginPage'
@@ -90,6 +91,7 @@ class App extends Component {
               <Route path={'/login'} component={LoginPage} />
               <Route path={'/register'} component={RegistrationPage} />
               <Route path='/nomlist' component={NomList} />
+              <Route path='/nom-page/:nomId' component={NomPage} />
               <Route path='/add-nom' component={AddNom} />
               <Route path='/edit-nom/:nomId' component={EditNom} />
               <Route component={NotFoundPage} />

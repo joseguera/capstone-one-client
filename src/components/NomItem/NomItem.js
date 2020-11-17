@@ -30,12 +30,13 @@ export default function NomItem(props) {
                 <li className='NomItem'>
                     <div className='NomItem_row'>
                         <h3 className='NomItem_title'>
-                            <a
+                            <Link to={`/nom-page/${props.id}`}
                                 href={props.url}
-                                target='_blank'
-                                rel='noopener noreferrer'>
+                                // target='_blank'
+                                // rel='noopener noreferrer'
+                            >
                                 {props.nom_name}
-                            </a>
+                            </Link>
                         </h3>
                     </div>
                     <p className='NomItem_description'>
