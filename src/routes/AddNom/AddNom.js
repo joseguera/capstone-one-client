@@ -41,7 +41,7 @@ class AddNom extends Component {
             body: JSON.stringify(nom),
             headers: {
                 'content-type': 'application/json',
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
             .then(res => {
