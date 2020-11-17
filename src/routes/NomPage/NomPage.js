@@ -69,18 +69,11 @@ class NomPage extends Component {
     }
 
     render() {
-        const { error, nom_name, sub, url, description } = this.state;
+        const { id, error, nom_name, sub, url, description } = this.state;
         return (
             <section className='NomPage'>
-                <h2>Nom Page</h2>
+                <h2>{nom_name}</h2>
                     <div>
-                        <p className='nom_name'>
-                            <span>
-                            Nom Name:
-                            {' '}
-                            </span>
-                            {nom_name}
-                        </p>
                         <p className='sub'>
                             <span>
                             Sub:
@@ -104,7 +97,7 @@ class NomPage extends Component {
                         </p>
                     </div>
                     <div className='NomPage__buttons'>
-                        <Link to={`/edit-nom/${this.props.id}`}>
+                        <Link to={`/edit-nom/${id}`}>
                             Edit
                         </Link>
                         {' '}
