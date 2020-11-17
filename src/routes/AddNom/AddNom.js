@@ -24,13 +24,16 @@ class AddNom extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
+        var d = document.getElementById("style");
+        var result = d.options[d.selectedIndex].text;
         // get the form fields from the event
-        const { nom_name, sub, url, description } = e.target;
+        const { nom_name, sub, url, description, style } = e.target;
         const nom = {
             nom_name: nom_name.value,
             sub: sub.value,
             url: url.value,
-            description: description.value
+            description: description.value,
+            style: result
         }
         this.setState({ error: null })
         fetch(config.API_ENDPOINT + `/noms`, {
@@ -52,6 +55,7 @@ class AddNom extends Component {
                 sub.value = ''
                 url.value = ''
                 description.value = ''
+                style.value = ''
                 this.context.addNom(data)
                 this.props.history.push('/nomlist')
             })
@@ -128,9 +132,18 @@ class AddNom extends Component {
                             id='description'
                         />
                     </div>
-                    
-                    {/* TO DO: Add recipe_id REQUIREMENT in order to match Noms to Recipes */}
-                    
+                    <div>
+                        <label htmlFor='style'>
+                            Nom Type:
+                            {' '}
+                            <Required />
+                        </label>
+                        <select id="style">
+                            <option value="None">-- Select --</option>
+                            <option value="nom">Nom</option>
+                            <option value="recipe">Recipe</option>
+                        </select>
+                    </div>                    
                     <div className='AddNom_buttons'>
                         <button type='button' onClick={this.handleClickCancel}>
                             Cancel

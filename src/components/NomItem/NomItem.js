@@ -32,20 +32,24 @@ export default function NomItem(props) {
                         <h3 className='NomItem_title'>
                             <Link to={`/nom-page/${props.id}`}
                                 href={props.url}
-                                // target='_blank'
-                                // rel='noopener noreferrer'
+                                style={{ textDecoration: 'none' }}
                             >
                                 {props.nom_name}
                             </Link>
                         </h3>
                     </div>
-                    <p className='NomItem_description'>
-                        {props.description}
+                    <p className='NomItem_style'>
+                        {props.style}
                     </p>
                     <div className='NomItem_buttons'>
-                        <Link to={`/edit-nom/${props.id}`}>
-                            Edit
-                        </Link>
+                        <button>
+                            <Link 
+                                to={`/edit-nom/${props.id}`}
+                                style={{ textDecoration: 'none' }}
+                            >
+                                Edit
+                            </Link>
+                        </button>
                         {' '}
                         <button
                             className='NomItem_description'

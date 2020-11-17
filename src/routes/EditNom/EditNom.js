@@ -28,6 +28,7 @@ class EditNom extends Component {
         sub: '',
         url: '',
         description: '',
+        style: ''
     };
 
     componentDidMount() {
@@ -51,7 +52,9 @@ class EditNom extends Component {
                     nom_name: responseData.nom_name,
                     sub: responseData.sub,
                     url: responseData.url,
-                    description: responseData.description
+                    description: responseData.description,                    
+                    style: responseData.style                  
+
                 })
             console.log(this.state)
             })
@@ -77,11 +80,17 @@ class EditNom extends Component {
         this.setState({ description: e.target.value })
     };
 
+    handleChangeStyle = e => {
+        e = document.getElementById("style");
+        var result = e.options[e.selectedIndex].text;
+        this.setState({ style: result })
+    };
+
     handleSubmit = e => {
         e.preventDefault();
         const { nomId } = this.props.match.params;
-        const { id, nom_name, sub, url, description } = this.state;
-        const newNom = { id, nom_name, sub, url, description };
+        const { id, nom_name, sub, url, description, style } = this.state;
+        const newNom = { id, nom_name, sub, url, description, style };
         fetch(config.API_ENDPOINT + `/noms/${nomId}`, {
             method: 'PATCH',
             body: JSON.stringify(newNom),
@@ -111,7 +120,9 @@ class EditNom extends Component {
             nom_name: newFields.nom_name || '',
             sub: newFields.sub || '',
             url: newFields.url || '',
-            description: newFields.description || '' 
+            description: newFields.description || '',
+            style: newFields.style || '' 
+
         })
     }
 
@@ -120,7 +131,7 @@ class EditNom extends Component {
     }
 
     render() {
-        const { error, nom_name, sub, url, description } = this.state;
+        const { error, nom_name, sub, url, description, style } = this.state;
         return (
             <section className='EditNom'>
                 <h2>Edit Nom</h2>
@@ -191,6 +202,22 @@ class EditNom extends Component {
                             value={description}
                             onChange={this.handleChangeDescription}
                         />
+                    </div>
+                    <div>
+                        <label htmlFor='style'>
+                            Nom Type:
+                            {' '}
+                            <Required />
+                        </label>
+                        <select id="style"
+                            name='style'
+                            value={style}
+                            onChange={this.handleChangeStyle}
+                        >
+                            <option value="None">{style === null ? `-- Select --` : style + ` selected`}</option>
+                            <option value="nom">{style === `Nom` ? `Recipe` : `Recipe`}</option>
+                            <option value="recipe">{style === `Recipe` ? `Nom` : `Nom`}</option>
+                        </select>
                     </div>
                     <div className='EditNom__buttons'>
                         <button type='button' onClick={this.handleClickCancel}>

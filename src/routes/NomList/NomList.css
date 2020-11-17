@@ -1,6 +1,25 @@
-.NomList__list {
-    list-style-type: none;
+section {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+ul {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.NomList__list {
+    display: block;
+    margin: auto;
     padding: 0;
 }
   

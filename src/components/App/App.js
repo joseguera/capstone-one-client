@@ -92,7 +92,7 @@ class App extends Component {
               <Route path={'/register'} component={RegistrationPage} />
               <Route path='/nomlist' component={NomList} />
               <Route path='/nom-page/:nomId' component={NomPage} />
-              <Route path='/add-nom' component={AddNom} />
+              <Route path='/new-nom' component={AddNom} />
               <Route path='/edit-nom/:nomId' component={EditNom} />
               <Route component={NotFoundPage} />
             </Switch>

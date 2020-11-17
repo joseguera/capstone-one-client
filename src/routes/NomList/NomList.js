@@ -28,16 +28,24 @@ class NomList extends Component {
         return (
             <section className='NomList'>
                 <h2>My Noms</h2>
-                <Link to={'/add-nom'}><h3>Add Nom</h3></Link>
-                {' '}
-                <ul className='NomList_list' aria-live='polite'>
-                    {noms.map(nom =>
-                        <NomItem
-                            key={nom.id}
-                            {...nom}
-                        />
-                    )}
-                </ul>
+                    <ul className='NomList_list' aria-live='polite'>
+                        <li>
+                            <button>
+                                <Link 
+                                    to={'/new-nom'}
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                        <h3>Add Nom +</h3>
+                                </Link>
+                            </button>
+                        </li>
+                        {noms.map(nom =>
+                            <NomItem
+                                key={nom.id}
+                                {...nom}
+                            />
+                        )}
+                    </ul>
             </section>
         )
     }

@@ -6,10 +6,6 @@ import NomNomsContext from '../../context/NomNomsContext';
 import config from '../../config'
 import './NomPage.css';
 
-const Required = () => (
-    <span className='NomPage_required'>*</span>
-)
-
 class NomPage extends Component {
     static propTypes = {
         match: PropTypes.shape({
@@ -62,14 +58,12 @@ class NomPage extends Component {
             })
     }
 
-    
-
     handleClickBack = () => {
         this.props.history.push('/nomlist')
     }
 
     render() {
-        const { id, error, nom_name, sub, url, description } = this.state;
+        const { id, nom_name, sub, url, description } = this.state;
         return (
             <section className='NomPage'>
                 <h2>{nom_name}</h2>
@@ -97,16 +91,17 @@ class NomPage extends Component {
                         </p>
                     </div>
                     <div className='NomPage__buttons'>
-                        <Link to={`/edit-nom/${id}`}>
-                            Edit
-                        </Link>
+                    <button>
+                            <Link 
+                                to={`/edit-nom/${id}`}
+                                style={{ textDecoration: 'none' }}
+                            >
+                                Edit
+                            </Link>
+                        </button>
                         {' '}
                         <button type='button' onClick={this.handleClickBack}>
                             Back
-                        </button>
-                        {' '}
-                        <button type='submit'>
-                            Save
                         </button>
                     </div>
             </section>
