@@ -26,27 +26,27 @@ class NomList extends Component {
     render() {
         const { noms } = this.context;
         return (
-            <section className='NomList'>
-                <h2>My Noms</h2>
-                    <ul className='NomList_list' aria-live='polite'>
-                        <li>
-                            <button>
-                                <Link 
-                                    to={'/new-nom'}
-                                    style={{ textDecoration: 'none' }}
-                                >
-                                        <h3>Add Nom +</h3>
-                                </Link>
-                            </button>
-                        </li>
-                        {noms.map(nom =>
-                            <NomItem
-                                key={nom.id}
-                                {...nom}
-                            />
-                        )}
-                    </ul>
-            </section>
+            <div className='main-list'>
+                <div className='NomList'>
+                    <h2 className='NomList_heading'>My Noms</h2>
+                        <Link
+                            to={'/new-nom'}
+                        >
+                            <button className='AddButton'>Add Nom +</button>
+                        </Link>
+                        {' '}
+                        <ul className='NomList_list' aria-live='polite'>
+                            <li>
+                                {noms.map(nom =>
+                                    <NomItem
+                                        key={nom.id}
+                                        {...nom}
+                                    />
+                                )}
+                            </li>
+                        </ul>
+                </div>
+            </div>
         )
     }
 }

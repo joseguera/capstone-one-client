@@ -29,10 +29,11 @@ export default function NomItem(props) {
             {(context) => (
                 <li className='NomItem'>
                     <div className='NomItem_row'>
-                        <h3 className='NomItem_title'>
+                        <h3>
                             <Link to={`/nom-page/${props.id}`}
                                 href={props.url}
                                 style={{ textDecoration: 'none' }}
+                                className='NomItem_title'
                             >
                                 {props.nom_name}
                             </Link>
@@ -42,17 +43,17 @@ export default function NomItem(props) {
                         {props.style}
                     </p>
                     <div className='NomItem_buttons'>
-                        <button>
                             <Link 
                                 to={`/edit-nom/${props.id}`}
                                 style={{ textDecoration: 'none' }}
                             >
-                                Edit
+                                <button className='butts'>
+                                    Edit
+                                </button>
                             </Link>
-                        </button>
                         {' '}
                         <button
-                            className='NomItem_description'
+                            className='butts'
                             onClick={() =>
                                 deleteNomRequest(props.id, context.deleteNom)
                             }

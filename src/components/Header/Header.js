@@ -41,8 +41,8 @@ export default class Header extends Component {
     return (
       <nav className='Header'>
         <h1>
-          <Link to='/'>
-            NomNoms
+          <Link to='/' className='site-title'>
+            <span className='first-N'>N</span>om<span className='last-N'>N</span>oms
           </Link>
         </h1>
         {TokenService.hasAuthToken()

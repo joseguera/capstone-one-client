@@ -6,7 +6,6 @@ import './Navigation.css'
 function Navigation() {
     return (
         <div>
-            <h1>Welcome to NomNoms</h1>
             <div className='nav'>
                 <Link to={'/'} className='links'><h3>Home Page</h3></Link>
                 {' '}

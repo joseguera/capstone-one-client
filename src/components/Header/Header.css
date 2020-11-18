@@ -3,7 +3,23 @@
     display: flex;
     align-items: normal;
     justify-content: space-between;
-  }
+    margin-bottom: 50px;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+}
+
+.site-title {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 40px;
+}
+
+.first-N {
+  font-size: 56px;
+}
+
+.last-N {
+  font-size: 48px;
+}
   
   .Header h1 {
     margin: 0;
