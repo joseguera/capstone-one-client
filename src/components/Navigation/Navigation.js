@@ -5,12 +5,12 @@ import './Navigation.css'
 
 function Navigation() {
     return (
-        <div>
-            <div className='nav'>
-                <Link to={'/'} className='links'><h3>Home Page</h3></Link>
+        <div className='nav-container'>
+            <ul className='nav'>
+                <li className='nav-items'><Link to={'/'} className='links'>Home Page</Link></li>
                 {' '}
-                <Link to={'/nomlist'} className='links'><h3>My Noms</h3></Link>
-            </div>
+                <li className='nav-items'><Link to={'/nomlist'} className='links'>My Noms</Link></li>
+            </ul>
         </div>
     )
 }

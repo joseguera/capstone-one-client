@@ -39,6 +39,7 @@ export default class Header extends Component {
 
   render() {
     return (
+      <div className='header-container'>
       <nav className='Header'>
         <h1>
           <Link to='/' className='site-title'>
@@ -49,6 +50,7 @@ export default class Header extends Component {
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
       </nav>
+      </div>
     )
   }
 }

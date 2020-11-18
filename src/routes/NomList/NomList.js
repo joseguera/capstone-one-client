@@ -36,14 +36,12 @@ class NomList extends Component {
                         </Link>
                         {' '}
                         <ul className='NomList_list' aria-live='polite'>
-                            <li>
                                 {noms.map(nom =>
                                     <NomItem
                                         key={nom.id}
                                         {...nom}
                                     />
                                 )}
-                            </li>
                         </ul>
                 </div>
             </div>
