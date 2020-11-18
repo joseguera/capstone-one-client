@@ -11,8 +11,6 @@ function Navigation() {
                 <Link to={'/'} className='links'><h3>Home Page</h3></Link>
                 {' '}
                 <Link to={'/nomlist'} className='links'><h3>My Noms</h3></Link>
-                {' '}
-                <Link to={'/users/user_id'} className='links'><h3>My Account</h3></Link>
             </div>
         </div>
     )

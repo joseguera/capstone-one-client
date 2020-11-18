@@ -97,7 +97,7 @@ class AddNom extends Component {
                     </div>
                     <div>
                         <label htmlFor='sub'>
-                            Sub
+                            Substitution for
                             {' '}
                             <Required />
                         </label>
@@ -113,14 +113,12 @@ class AddNom extends Component {
                         <label htmlFor='url'>
                             URL
                             {' '}
-                            <Required />
                         </label>
                         <input 
                             type='url'
                             name='url'
                             id='url'
                             placeholder='https://www.veganhoney.com'
-                            required
                         />
                     </div>
                     <div>

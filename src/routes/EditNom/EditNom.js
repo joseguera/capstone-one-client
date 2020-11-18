@@ -96,7 +96,7 @@ class EditNom extends Component {
             body: JSON.stringify(newNom),
             headers: {
                 'content-type': 'application/json',
-                'Authorization': `basic ${TokenService.getAuthToken()}`,
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res => {
@@ -164,7 +164,7 @@ class EditNom extends Component {
                     </div>
                     <div>
                         <label htmlFor='sub'>
-                            Sub
+                            Substitution for
                             {' '}
                             <Required />
                         </label>

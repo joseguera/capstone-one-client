@@ -25,6 +25,7 @@ class NomPage extends Component {
         sub: '',
         url: '',
         description: '',
+        style: ''
     };
 
     componentDidMount() {
@@ -48,7 +49,8 @@ class NomPage extends Component {
                     nom_name: responseData.nom_name,
                     sub: responseData.sub,
                     url: responseData.url,
-                    description: responseData.description
+                    description: responseData.description,
+                    style: responseData.style
                 })
             console.log(this.state)
             })
@@ -63,14 +65,14 @@ class NomPage extends Component {
     }
 
     render() {
-        const { id, nom_name, sub, url, description } = this.state;
+        const { id, nom_name, sub, url, description, style } = this.state;
         return (
             <section className='NomPage'>
                 <h2>{nom_name}</h2>
                     <div>
                         <p className='sub'>
                             <span>
-                            Sub:
+                            Substitution for:
                             {' '}
                             </span>
                             {sub}
@@ -88,6 +90,13 @@ class NomPage extends Component {
                             {' '}
                             </span>
                             {description}
+                        </p>
+                        <p className='style'>
+                            <span>
+                            Nom Type:
+                            {' '}
+                            </span>
+                            {style ? style : `No Nom type was selected`}
                         </p>
                     </div>
                     <div className='NomPage__buttons'>
