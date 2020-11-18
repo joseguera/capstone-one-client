@@ -24,6 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    document.body.style.backgroundColor = "skyblue"
     fetch(config.API_ENDPOINT + `/noms/`, {
       method: 'GET',
       headers: {
@@ -82,11 +83,12 @@ class App extends Component {
       updateNom: this.updateNom,
     }
     return (
-      <div className='App'>
+      <div 
+        className='App'>
         <header className='App__header'>
             <Header />
         </header>
-        <main className='App'>
+        <main className='app-main'>
           <NomNomsContext.Provider value={contextValue}>
             <Navigation />
             <Switch>

@@ -1,5 +1,5 @@
 .header-container {
-  width: 640px; /* Can be in percentage also. */
+  width: 479px; /* Can be in percentage also. */
   height: auto;
   margin: 0 auto;
   padding: 10px;
@@ -24,10 +24,12 @@
 
 .first-N {
   font-size: 56px;
+  color: maroon;
 }
 
 .last-N {
   font-size: 48px;
+  color: #b37400;
 }
   
   .Header h1 {
@@ -40,6 +42,7 @@
   
   .Header a {
     color: #444;
+    text-decoration: none;
   }
   
   .Header__not-logged-in {
@@ -49,6 +52,12 @@
   
   .Header__not-logged-in .Hyph {
     display: none;
+  }
+
+  .reg-links:hover {
+    color: black;
+    text-decoration: underline;
+    color: maroon;
   }
   
   @media screen and (min-width: 450px) {
@@ -67,4 +76,5 @@
       display: initial;
     }
   }
+
   

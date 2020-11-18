@@ -28,12 +28,13 @@ export default function NomItem(props) {
         <NomNomsContext.Consumer>
             {(context) => (
                 <li className='NomItem'>
-                    <div className='NomItem_row'>
+                    <div>
                         <h3>
                             <Link to={`/nom-page/${props.id}`}
-                                href={props.url}
-                                style={{ textDecoration: 'none' }}
-                                className='NomItem_title'
+                                style={{
+                                    color: 'black',
+                                    textDecoration: 'none'
+                                }}
                             >
                                 {props.nom_name}
                             </Link>
@@ -42,7 +43,7 @@ export default function NomItem(props) {
                     <p className='NomItem_style'>
                         {props.style}
                     </p>
-                    <div className='NomItem_buttons'>
+                    <div>
                             <Link 
                                 to={`/edit-nom/${props.id}`}
                                 style={{ textDecoration: 'none' }}

@@ -6,8 +6,13 @@
     margin-bottom: 10px;
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
     font-family: 'Oxanium', cursive;
-    background-color: orchid;
+    background-color: #69acb8;
+}
+
+.NomItem_style {
     color: yellow;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 18px;
 }
 
 /* font-family: 'Iceland', cursive;
@@ -18,31 +23,17 @@ font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace; */
 
 .NomItem__title {
-    margin: 0 0 5px;
-    
+    text-decoration: 'none';
+    color: 'green'
 }
 
-h3 {
-color: papayawhip;
-}
-
-.NomItem__row {
-display: flex;
-justify-content: space-between;
-}
-
-.NomItem__description {
-text-align: left;
-margin: 4px 0;
+.NomItem__title:hover {
+    margin: 0;
+    color: #fff;   
 }
 
 .AddNomItem__required {
 color: #b00c0c;
-}
-
-.NomItem__buttons {
-font-size: .8em;
-text-align: right;
 }
 
 .butts {

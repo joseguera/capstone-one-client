@@ -25,11 +25,13 @@ export default class Header extends Component {
     return (
       <div className='Header__not-logged-in'>
         <Link
+          className='reg-links'
           to='/register'>
           Register
         </Link>
         <Hyph />
         <Link
+          className='reg-links'
           to='/login'>
           Log in
         </Link>
