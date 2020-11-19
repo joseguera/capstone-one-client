@@ -1,5 +1,5 @@
 .form-body, .RegistrationPage, .LoginPage {
-    width: 400px; /* Can be in percentage also. */
+    width: 700px; /* Can be in percentage also. */
     height: auto;
     margin: 0 auto;
     position: relative;
@@ -18,7 +18,7 @@
     font-family: 'VT323', monospace;
     font-size: 24px;
     margin-bottom: 10px;
-    width: 455px;
+    width: 676px;
 }
 
 .input {
@@ -27,24 +27,11 @@
 
 @media screen and (max-width: 500px) {
 
-    .header-container {
+    .form-body, .RegistrationPage, .LoginPage {
         width: 400px; /* Can be in percentage also */
-        height: auto;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-        padding-bottom: 20px;
-        font-size: 18px;
     }
   
-    .Header {
-      height: 40px;
-      display: inline-block;
-      align-items: normal;
-      justify-content: space-between;
-      margin-bottom: 50px;
-      font-family: 'VT323', monospace;
-      font-size: 25px;
-  }
-    
-  }
+    .fields {
+        width: 376px;
+    }   
+}
