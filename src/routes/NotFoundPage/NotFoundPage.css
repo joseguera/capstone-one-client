@@ -1,5 +1,5 @@
 .error-body {
-    width: 400px; /* Can be in percentage also */
+    width: 700px; /* Can be in percentage also */
     height: auto;
     margin: 0 auto;
     position: relative;
@@ -18,4 +18,21 @@
 .accent {
     font-family: 'Orbitron', sans-serif;
     color: #333;
+}
+
+/* start of desktop styles */
+
+@media screen and (max-width: 500px) {
+    /* start of large tablet styles */
+
+    .error-body {
+        width: 400px; /* Can be in percentage also */
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+    
 }

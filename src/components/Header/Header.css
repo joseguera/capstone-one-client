@@ -1,5 +1,5 @@
 .header-container {
-  width: 400px; /* Can be in percentage also. */
+  width: 700px; /* Can be in percentage also. */
   height: auto;
   margin: 0 auto;
   padding: 10px;
@@ -59,22 +59,30 @@
     text-decoration: underline;
     color: maroon;
   }
-  
-  @media screen and (min-width: 450px) {
-    .Header {
-      align-items: baseline;
-    }
-    .Header h1 {
-      font-size: 22pt;
-    }
-  
-    .Header__not-logged-in {
-      flex-direction: row;
-    }
-  
-    .Header__not-logged-in .Hyph {
-      display: initial;
-    }
+
+/* start of desktop and large table styles */
+
+@media screen and (max-width: 500px) {
+
+  .header-container {
+      width: 400px; /* Can be in percentage also */
+      height: auto;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      padding-bottom: 20px;
+      font-size: 18px;
   }
 
+  .Header {
+    height: 40px;
+    display: inline-block;
+    align-items: normal;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+}
+  
+}
   
