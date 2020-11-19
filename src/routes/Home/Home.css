@@ -18,3 +18,16 @@
 .home-text {
     color: #333;
 }
+
+@media screen and (max-width: 500px) {
+
+    .home-body {
+        width: 400px; /* Can be in percentage also */
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+}

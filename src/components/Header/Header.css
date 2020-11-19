@@ -55,10 +55,10 @@
   }
 
   .reg-links:hover {
-    color: black;
     text-decoration: underline;
     color: maroon;
   }
+
 
 /* start of desktop and large table styles */
 
@@ -82,7 +82,7 @@
     margin-bottom: 50px;
     font-family: 'VT323', monospace;
     font-size: 25px;
-}
+  }
   
 }
   
