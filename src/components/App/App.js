@@ -8,9 +8,6 @@ import NomList from '../../routes/NomList/NomList'
 import NomPage from '../../routes/NomPage/NomPage'
 import AddNom from '../../routes/AddNom/AddNom'
 import EditNom from '../../routes/EditNom/EditNom'
-import Noms4All from '../../routes/Home/HomeSlides/Noms4All'
-import NoNoms from '../../routes/Home/HomeSlides/NoNoms'
-import WhyNoms from '../../routes/Home/HomeSlides/WhyNoms'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
@@ -99,9 +96,6 @@ class App extends Component {
               <Route path={'/nom-page/:nomId'} component={NomPage} />
               <Route path={'/new-nom'} component={AddNom} />
               <Route path={'/edit-nom/:nomId'} component={EditNom} />
-              <Route path='/why-noms' component={WhyNoms} />
-              <Route path='/no-noms' component={NoNoms} />
-              <Route path='/noms-4-all' component={Noms4All} />
               <Route component={NotFoundPage} />
             </Switch>
           </NomNomsContext.Provider>

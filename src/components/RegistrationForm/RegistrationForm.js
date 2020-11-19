@@ -26,6 +26,7 @@ export default class RegistrationForm extends Component {
         password.value = ''
         this.props.onRegistrationSuccess()
         this.props.history.push('/')
+        window.location = '/'
       })
       .catch(res => {
         this.setState({ error: res.error })

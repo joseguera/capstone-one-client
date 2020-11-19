@@ -67,14 +67,16 @@ class NomPage extends Component {
     render() {
         const { id, nom_name, sub, url, description, style } = this.state;
         return (
+            <div className='main-nom-page'>
             <section className='NomPage'>
-                <h2>{nom_name}</h2>
-                    <div>
+                <h2 className='NomPage_heading'>{nom_name}</h2>
+                    <div className='page-body'>
                         <p className='sub'>
                             <span>
                             Substitution for:
                             {' '}
                             </span>
+                            <br />
                             {sub}
                         </p>
                         <p className='url'>
@@ -82,6 +84,7 @@ class NomPage extends Component {
                             URL:
                             {' '}
                             </span>
+                            <br />
                             {url ? url : `No URL available`}
                         </p>
                         <p className='description'>
@@ -89,6 +92,7 @@ class NomPage extends Component {
                             Description:
                             {' '}
                             </span>
+                            <br />
                             {description}
                         </p>
                         <p className='style'>
@@ -96,24 +100,31 @@ class NomPage extends Component {
                             Nom Type:
                             {' '}
                             </span>
+                            <br />
                             {style ? style : `No Nom type was selected`}
                         </p>
                     </div>
                     <div className='NomPage__buttons'>
-                    <button>
-                            <Link 
-                                to={`/edit-nom/${id}`}
-                                style={{ textDecoration: 'none' }}
-                            >
+                        <Link 
+                            to={`/edit-nom/${id}`}
+                            style={{ textDecoration: 'none' }}
+                        >
+                            <button className='butts'>
                                 Edit
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
+
                         {' '}
-                        <button type='button' onClick={this.handleClickBack}>
+                        <button 
+                            type='button'
+                            onClick={this.handleClickBack}
+                            className='butts'
+                        >
                             Back
                         </button>
                     </div>
             </section>
+            </div>
         )
     }
 }

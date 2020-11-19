@@ -150,7 +150,7 @@ class AddNom extends Component {
                         <select 
                             id="style"
                             className='inputs'
-                            placeholder='--Select--'
+                            required
                         >
                             {/* <option value="None">-- Select --</option> */}
                             <option value="nom">Nom</option>

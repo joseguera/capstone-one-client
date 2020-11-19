@@ -2,8 +2,9 @@
     list-style: none;
     margin: 0;
     font-size: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 1px;
+    margin-bottom: 15px;
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
     font-family: 'Oxanium', cursive;
     background-color: #69acb8;
@@ -21,11 +22,6 @@ font-family: 'Oxanium', cursive;
 font-family: 'Press Start 2P', cursive;
 font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace; */
-
-.NomItem__title {
-    text-decoration: 'none';
-    color: 'green'
-}
 
 .NomItem__title:hover {
     margin: 0;

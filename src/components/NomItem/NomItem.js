@@ -33,7 +33,8 @@ export default function NomItem(props) {
                             <Link to={`/nom-page/${props.id}`}
                                 style={{
                                     color: 'black',
-                                    textDecoration: 'none'
+                                    textDecoration: 'none',
+                                    fontSize: 28,
                                 }}
                             >
                                 {props.nom_name}
