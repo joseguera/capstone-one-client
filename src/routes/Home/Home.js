@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 import './Home.css'
 
 class Home extends Component  {
@@ -9,7 +11,8 @@ class Home extends Component  {
                 <div className='noms-1'>
                     <h3 className='home-heading'>What is NomNoms?</h3>
                     <p className='home-text'>NomNoms is a place to save vegan recipes and substitutions (or, noms) by collecting all of those links, brands and countless other things that are often difficult to keep track of.</p>
-                    <p  className='home-text'>Login or Register to get started.</p>
+                    <p  className='home-text'>
+                        <Link className='reg-links' to='/login'>Log in</Link> or <Link className='reg-links' to='/register'>Register</Link> to get started.</p>
                 </div>
                 <div className='noms-2'>
                     <h3 className='home-heading'>No NomNoms? No worries</h3>
@@ -25,3 +28,6 @@ class Home extends Component  {
 }
 
 export default Home;
+
+
+
