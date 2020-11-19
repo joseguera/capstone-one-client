@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
-import { Button, Input } from '../Utils/Utils'
+import { Input, Required } from '../Utils/Utils'
+import '../../components/RegistrationForm/RegistrationForm.css'
+
 
 export default class LoginForm extends Component {
     static defaultProps = {
@@ -37,6 +39,7 @@ export default class LoginForm extends Component {
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
                 this.props.onLoginSuccess()
+                this.props.history.push('/')
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -53,20 +56,20 @@ export default class LoginForm extends Component {
                 <div role='alert'>
                     {error && <p className='red'>{error}</p>}
                 </div>
-                <div className='username'>
+                <div className='username fields'>
                     <label htmlFor='LoginForm__username'>
-                        User name
-          </label>
+                        Username <Required />
+                    </label>
                     <Input
                         required
                         name='username'
                         id='LoginForm__username'>
                     </Input>
                 </div>
-                <div className='password'>
+                <div className='password fields'>
                     <label htmlFor='LoginForm__password'>
-                        Password
-          </label>
+                        Password <Required />
+                    </label>
                     <Input
                         required
                         name='password'
@@ -74,9 +77,9 @@ export default class LoginForm extends Component {
                         id='LoginForm__password'>
                     </Input>
                 </div>
-                <Button type='submit'>
+                <button type='submit' className='butts'>
                     Login
-        </Button>
+                </button>
             </form>
         )
     }

@@ -6,7 +6,7 @@ import TokenService from '../../services/token-service'
 import './AddNom.css'
 
 const Required = () => (
-    <span className='AddNom_required'>*</span>
+    <span className='AddNom_required red'>*</span>
 )
 
 class AddNom extends Component {
@@ -72,8 +72,9 @@ class AddNom extends Component {
     render() {
         const { error } = this.state;
         return (
+            <div className='add-body'>
             <section className='AddNom'>
-                <h2>Create a nom</h2>
+                <h2 className='make-nom'>Create a Nom</h2>
                 <form
                     className='AddNom_form'
                     onSubmit={this.handleSubmit}
@@ -81,78 +82,98 @@ class AddNom extends Component {
                     <div className='AddNom_error' role='alert'>
                         {error && <p>{error.message}</p>}
                     </div>
-                    <div>
+                    <div className='add-fields'>
                         <label htmlFor='nom_name'> 
                             Nom Name
                             {' '}
                             <Required />
                         </label>
+                        <br />
                         <input 
                             type='text'
                             name='nom_name'
                             id='nom_name'
                             placeholder='Vegan honey'
+                            className='inputs'
                             required
                         />
                     </div>
-                    <div>
+                    <div className='add-fields'>
                         <label htmlFor='sub'>
                             Substitution for
                             {' '}
                             <Required />
                         </label>
+                        <br />
                         <input 
                             type='text'
                             name='sub'
                             id='sub'
                             placeholder='honey'
+                            className='inputs'
                             required
                         />
                     </div>
-                    <div>
+                    <div className='add-fields'>
                         <label htmlFor='url'>
                             URL
                             {' '}
                         </label>
+                        <br />
                         <input 
                             type='url'
                             name='url'
                             id='url'
                             placeholder='https://www.veganhoney.com'
+                            className='inputs'
                         />
                     </div>
-                    <div>
+                    <div className='add-fields'>
                         <label htmlFor='description'>
                             Description
                         </label>
+                        <br />
                         <textarea
                             name='description'
                             id='description'
+                            className='inputs textarea'
+                            placeholder='Vegan Honey made with apples and lemon'
                         />
                     </div>
-                    <div>
+                    <div className='add-fields'>
                         <label htmlFor='style'>
                             Nom Type:
                             {' '}
                             <Required />
                         </label>
-                        <select id="style">
-                            <option value="None">-- Select --</option>
+                        <br />
+                        <select 
+                            id="style"
+                            className='inputs'
+                            placeholder='--Select--'
+                        >
+                            {/* <option value="None">-- Select --</option> */}
                             <option value="nom">Nom</option>
                             <option value="recipe">Recipe</option>
                         </select>
                     </div>                    
                     <div className='AddNom_buttons'>
-                        <button type='button' onClick={this.handleClickCancel}>
+                        <button 
+                            type='button'
+                            onClick={this.handleClickCancel}
+                            className='butts'>
                             Cancel
                         </button>
                         {' '}
-                        <button type='submit'>
+                        <button 
+                            type='submit'
+                            className='butts'>
                             Save
                         </button>
                     </div>
                 </form>
             </section>
+            </div>
         )
     }
 }

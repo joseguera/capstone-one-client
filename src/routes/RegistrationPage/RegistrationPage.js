@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Section } from '../../components/Utils/Utils'
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import '../../components/RegistrationForm/RegistrationForm.css'
 
 export default class RegistrationPage extends Component {
     static defaultProps = {
@@ -11,13 +12,13 @@ export default class RegistrationPage extends Component {
 
     handleRegistrationSuccess = user => {
         const { history } = this.props
-        history.push('/login')
+        history.push('/')
     }
 
     render() {
         return (
             <Section className='RegistrationPage'>
-                <h2>Register</h2>
+                <h2 className='register'>Register</h2>
                 <RegistrationForm
                     onRegistrationSuccess={this.handleRegistrationSuccess}
                 />

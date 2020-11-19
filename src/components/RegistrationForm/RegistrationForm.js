@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Input, Required } from '../Utils/Utils'
+import { Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
+import './RegistrationForm.css'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -24,6 +25,7 @@ export default class RegistrationForm extends Component {
         username.value = ''
         password.value = ''
         this.props.onRegistrationSuccess()
+        this.props.history.push('/')
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -33,6 +35,7 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
+      <div className='form-body'>
       <form
         className='RegistrationForm'
         onSubmit={this.handleSubmit}
@@ -40,10 +43,11 @@ export default class RegistrationForm extends Component {
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
-        <div className='fullname'>
+        <div className='fullname fields'>
           <label htmlFor='RegistrationForm__fullname'>
             Full name <Required />
           </label>
+          <br />
           <Input
             name='fullname'
             type='text'
@@ -51,18 +55,19 @@ export default class RegistrationForm extends Component {
             id='RegistrationForm__fullname'>
           </Input>
         </div>
-        <div className='username'>
+        <div className='username fields'>
           <label htmlFor='RegistrationForm__username'>
-            User name <Required />
+            Username <Required />
           </label>
           <Input
             name='username'
             type='text'
             required
-            id='RegistrationForm__username'>
+            id='RegistrationForm__username'
+            className='input'>
           </Input>
         </div>
-        <div className='password'>
+        <div className='password fields'>
           <label htmlFor='RegistrationForm__password'>
             Password <Required />
           </label>
@@ -73,10 +78,11 @@ export default class RegistrationForm extends Component {
             id='RegistrationForm__password'>
           </Input>
         </div>
-        <Button type='submit'>
+        <button type='submit' className='butts'>
           Register
-        </Button>
+        </button>
       </form>
+      </div>
     )
   }
 }

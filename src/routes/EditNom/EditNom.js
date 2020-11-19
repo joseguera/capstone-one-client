@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import TokenService from '../../services/token-service'
 import NomNomsContext from '../../context/NomNomsContext';
 import config from '../../config'
-import './EditNom.css';
+import '../AddNom/AddNom.css';
 
 const Required = () => (
-    <span className='EditNom_required'>*</span>
+    <span className='EditNom_required red'>*</span>
 )
 
 class EditNom extends Component {
@@ -133,8 +133,9 @@ class EditNom extends Component {
     render() {
         const { error, nom_name, sub, url, description, style } = this.state;
         return (
+            <div className='edit-body'>
             <section className='EditNom'>
-                <h2>Edit Nom</h2>
+                <h2 className='edit-nom'>Edit Nom</h2>
                 <form
                     className='EditNom_form'
                     onSubmit={this.handleSubmit}
@@ -146,71 +147,81 @@ class EditNom extends Component {
                         type='hidden'
                         name='id'
                     />
-                    <div>
+                    <div className='edit-fields'>
                         <label htmlFor='nom_name'>
                             Nom Name
                             {' '}
                             <Required />
                         </label>
+                        <br />
                         <input 
                             type='text'
                             name='nom_name'
                             id='nom_name'
+                            className='inputs textarea'
                             placeholder='Vegan honey'
                             required
                             value={nom_name}
                             onChange={this.handleChangeName}
                         />
                     </div>
-                    <div>
+                    <div  className='edit-fields'>
                         <label htmlFor='sub'>
                             Substitution for
                             {' '}
                             <Required />
                         </label>
+                        <br />
                         <input
                             type='sub'
                             name='sub'
                             id='sub'
+                            className='inputs textarea'
                             placeholder='honey'
                             required
                             value={sub}
                             onChange={this.handleChangeSub}
                         />
                     </div>
-                    <div>
+                    <div className='edit-fields'>
                         <label htmlFor='url'>
                             URL
                             {' '}
                         </label>
+                        <br />
                         <input
                             type='url'
                             name='url'
                             id='url'
+                            className='inputs textarea'
                             placeholder='http//:www.vegan-honey.com'
                             value={url}
                             onChange={this.handleChangeUrl}
                         />
                     </div>
-                    <div>
+                    <div className='edit-fields'>
                         <label htmlFor='description'>
                             Description
                         </label>
+                        <br />
                         <textarea
                             name='description'
                             id='description'
+                            className='inputs textarea'
                             value={description}
                             onChange={this.handleChangeDescription}
                         />
                     </div>
-                    <div>
+                    <div className='edit-fields'>
                         <label htmlFor='style'>
                             Nom Type:
                             {' '}
                             <Required />
                         </label>
+                        <br />
                         <select id="style"
                             name='style'
+                            className='inputs textarea'
                             value={style}
                             onChange={this.handleChangeStyle}
                         >
@@ -220,16 +231,20 @@ class EditNom extends Component {
                         </select>
                     </div>
                     <div className='EditNom__buttons'>
-                        <button type='button' onClick={this.handleClickCancel}>
+                        <button 
+                            type='button'
+                            onClick={this.handleClickCancel}
+                            className='butts'>
                             Cancel
                         </button>
                         {' '}
-                        <button type='submit'>
+                        <button type='submit' className='butts'>
                             Save
                         </button>
                     </div>
                 </form>
             </section>
+            </div>
         )
     }
 }
