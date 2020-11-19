@@ -54,18 +54,9 @@ label {
 
   .add-body, .edit-body {
       width: 400px; /* Can be in percentage also */
-      height: auto;
-      margin: 0 auto;
-      position: relative;
-      text-align: center;
-      padding-bottom: 20px;
-      font-size: 18px;
   }
 
   .add-fields, .edit-fields {
-    font-family: 'VT323', monospace;
-    font-size: 24px;
-    margin-bottom: 10px;
     width: 376px;
   }
   

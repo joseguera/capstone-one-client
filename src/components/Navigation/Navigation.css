@@ -40,12 +40,6 @@
 
     .nav-container {
         width: 400px; /* Can be in percentage also */
-        height: auto;
-        margin: 0 auto;
-        position: relative;
-        text-align: center;
-        padding-bottom: 20px;
-        font-size: 18px;
     }
     
 }
