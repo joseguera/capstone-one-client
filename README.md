@@ -2,8 +2,10 @@
 NomNoms allows users to create recipes and modifications to foods based on their dietary choice.
 
 
+
 ### 1. Working Prototype (to do later)
 (Example) You can access a working prototype of the React app here: https://nomnoms-app.vercel.app/ and Node app here: https://nomnoms-app.herokuapp.com/
+
 
 
 ### 2. User Stories
@@ -26,6 +28,7 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to be able to view the "My Noms" page of the app, so I can decide if I want to create my own "noms" or edit and delete existing ones.
 
 
+
 ### 3. Functionality
 The app's functionality includes:
 * Every User has the ability to create an account
@@ -44,8 +47,8 @@ The app's functionality includes:
 
 
 ### 5. Wireframes
-Landing/Home Page
 :-------------------------:
+Landing/Home Page
 ![Landing/Home Page](/github-images/wireframes/landing-home-page.jpg)
 Login Page
 ![Login Page](/github-images/wireframes/sign-in-page.jpg)
@@ -55,9 +58,15 @@ My Noms Page
 ![My Noms Page](/github-images/wireframes/your-noms-page.jpg)
 
 #### Graybox Wireframes
-
-
-#### Screenshots
+:-------------------------:
+Landing/Home Page
+![Landing/Home Page](/github-images/graybox-wireframes/home-page.png)
+Login Page
+![Login Page](/github-images/graybox-wireframes/login-page.png)
+Sign Up/Registration Page
+![Sign Up/Registration Page](/github-images/graybox-wireframes/sign-up-form.png)
+My Noms Page
+![My Noms Page](/github-images/graybox-wireframes/your-noms-page.png)
 
 
 
