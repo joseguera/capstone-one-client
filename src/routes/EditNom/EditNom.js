@@ -56,7 +56,6 @@ class EditNom extends Component {
                     style: responseData.style                  
 
                 })
-            console.log(this.state)
             })
             .catch(error => {
                 console.error(error)

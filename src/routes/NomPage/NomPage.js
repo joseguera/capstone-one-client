@@ -52,7 +52,6 @@ class NomPage extends Component {
                     description: responseData.description,
                     style: responseData.style
                 })
-            console.log(this.state)
             })
             .catch(error => {
                 console.error(error)

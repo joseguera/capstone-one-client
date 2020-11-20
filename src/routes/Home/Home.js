@@ -13,6 +13,10 @@ class Home extends Component  {
                     <p className='home-text'>NomNoms is a place to save vegan recipes and substitutions (or, noms) by collecting all of those links, brands and countless other things that are often difficult to keep track of.</p>
                     <p  className='home-text'>
                         <Link className='reg-links' to='/login'>Log in</Link> or <Link className='reg-links' to='/register'>Register</Link> to get started.</p>
+                    <p>To view a demo:<br/>
+                        username: samples-account<br/>
+                        password: Password123!
+                    </p>
                 </div>
                 <div className='noms-2'>
                     <h3 className='home-heading'>No NomNoms? No worries</h3>

@@ -5,9 +5,6 @@ NomNoms allows users to create recipes and modifications to foods based on their
 
 ### 1. Working Prototype
 You can access a working prototype of the React app here: https://nomnoms-app.vercel.app/ and Node app here: https://nomnoms-app.herokuapp.com/
-* Use the following credentials to log into Vercel:
-  * username: samples-account
-  * password: Password123!
 
 
 
