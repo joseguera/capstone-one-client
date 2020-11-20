@@ -62,4 +62,8 @@
     .main-nom-page {
         width: 400px; /* Can be in percentage also */
     }
+
+    .NomPage {
+        width: 350px; /* Can be in percentage also. */
+    }
 }
