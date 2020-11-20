@@ -85,7 +85,7 @@ class NomPage extends Component {
                             {' '}
                             </span>
                             <br />
-                            <a href={url} target='_blank'>{url ? url : `No URL available`}</a>
+                            <a href={url} target='_blank' rel='noreferrer'>{url}</a>
                         </p>
                         <p className='description'>
                             <span>
