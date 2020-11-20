@@ -10,25 +10,20 @@ NomNoms allows users to create recipes and modifications to foods based on their
 This app is for two types of users: a visitor and a logged-in user
 
 ###### Landing/Home Page
-* as a visitor
-* I want to understand what I can do with this app (or sign up, or log in)
-* so I can decide if I want to use it
+* As a visitor
+* I want to understand what I can do with this app (or sign up, or log in) so I can decide if I want to use it
 
 ###### Login Page
 * As a returning register user
-* I want to enter my password and username to use this app,
-* So I can have access to my account.
+* I want to enter my password and username to use this app, so I can have access to my account.
 
-###### Sign Up
+###### Sign Up/Registration Page
 * As a visitor
-* I want to register to use this app
-* So I can create a personal account.
+* I want to register to use this app so I can create a personal account.
 
 ###### My Noms Page
 * As a logged-in user,
-* I want to be able to view the "My Noms" page of the app,
-* So I can decide if I want to create my own "noms" or edit and 
-* delete existing ones.
+* I want to be able to view the "My Noms" page of the app, so I can decide if I want to create my own "noms" or edit and delete existing ones.
 
 
 ### 3. Functionality
@@ -48,12 +43,20 @@ The app's functionality includes:
 
 
 
-### 5. Wireframes (to do now)
-(Example) Landing Page
+### 5. Wireframes
+Landing/Home Page
 :-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
-Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
+![Landing/Home Page](/github-images/wireframes/landing-home-page.jpg)
+![Login Page](/github-images/wireframes/)
+Sign Up/Registration Page
+![Sign Up/Registration Page](/github-images/wireframes/register-page-wireframe.png)
+My Noms Page
+![My Noms Page](/github-images/wireframes/)
+
+#### Graybox Wireframes
+
+
+#### Screenshots
 
 
 
