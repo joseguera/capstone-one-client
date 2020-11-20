@@ -85,7 +85,7 @@ class NomPage extends Component {
                             {' '}
                             </span>
                             <br />
-                            {url ? url : `No URL available`}
+                            <Link href={url}>{url ? url : `No URL available`}</Link>
                         </p>
                         <p className='description'>
                             <span>
