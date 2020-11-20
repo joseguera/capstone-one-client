@@ -123,7 +123,7 @@ API Documentation details:
 * POST Nom
     * `https://nomnoms-app.herokuapp.com/api/noms/`
         * JSON body
-        *   { "nom_name": "Nature's Own 100% Whole Wheat Hot Dog Buns", "sub": "bread", "url": `https://www.naturesownbread.com/natures-own/100-whole-wheat-hot-dog-buns`, "description": "Each soft bun contains a whopping 22 grams of whole grains and 3 grams of fiber. They’re the perfect complement to your favorite hot dog or sausage.", "author": 1, "style": "Recipe"
+        *   { "nom_name": "Nature's Own 100% Whole Wheat Hot Dog Buns", "sub": "bread", "url": `"https://www.naturesownbread.com/natures-own/100-whole-wheat-hot-dog-buns"`, "description": "Each soft bun contains a whopping 22 grams of whole grains and 3 grams of fiber. They’re the perfect complement to your favorite hot dog or sausage.", "author": 1, "style": "Recipe"
             }
 
 * POST User
@@ -134,7 +134,7 @@ API Documentation details:
 * PATCH One Nom
     * `https://nomnoms-app.herokuapp.com/api/noms/12`
         * JSON body
-        *   { "nom_name": "Nature's Own 100% Whole Wheat Hot Dog Buns", "sub": "bread", "url": `https://www.naturesownbread.com/natures-own/100-whole-wheat-hot-dog-buns`, "description": "New bread.", "author": 1, "style": "Nom" }
+        *   { "nom_name": "Nature's Own 100% Whole Wheat Hot Dog Buns", "sub": "bread", "url": `"https://www.naturesownbread.com/natures-own/100-whole-wheat-hot-dog-buns"`, "description": "New bread.", "author": 1, "style": "Nom" }
 
 * DELETE One Nom
     * `https://nomnoms-app.herokuapp.com/api/noms/12`
