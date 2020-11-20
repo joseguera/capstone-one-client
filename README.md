@@ -47,11 +47,12 @@ The app's functionality includes:
 Landing/Home Page
 :-------------------------:
 ![Landing/Home Page](/github-images/wireframes/landing-home-page.jpg)
-![Login Page](/github-images/wireframes/)
+Login Page
+![Login Page](/github-images/wireframes/sign-in-page.jpg)
 Sign Up/Registration Page
-![Sign Up/Registration Page](/github-images/wireframes/register-page-wireframe.png)
+![Sign Up/Registration Page](/github-images/wireframes/sign-up-registration-page.jpg)
 My Noms Page
-![My Noms Page](/github-images/wireframes/)
+![My Noms Page](/github-images/wireframes/your-noms-page.jpg)
 
 #### Graybox Wireframes
 
