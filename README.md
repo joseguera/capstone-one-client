@@ -3,8 +3,11 @@ NomNoms allows users to create recipes and modifications to foods based on their
 
 
 
-### 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://nomnoms-app.vercel.app/ and Node app here: https://nomnoms-app.herokuapp.com/
+### 1. Working Prototype
+You can access a working prototype of the React app here: https://nomnoms-app.vercel.app/ and Node app here: https://nomnoms-app.herokuapp.com/
+* Use the following credentials to log into Vercel:
+  * username: samples-account
+  * password: Password123!
 
 
 
@@ -70,27 +73,88 @@ My Noms Page
 
 
 
-### 6. Front-end Structure - React Components Map (to do later)
-* (Example) __Index.js__ (stateless)
+### 6. Front-end Structure - React Components Map
+* __Index.js__ (stateless)
     * __App.js__ (stateful)
-        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
-            * __Login.js__ (stateful) -
-            * __Register.js__ (stateful) -
-        * __Navbar.js__ (stateless) -
+        * __Header.js__ (stateless)
+            * __LoginPage.js__ (stateless) -
+                * __LoginForm.js__ (stateful) - gets the _"error"_ from the __App.js__
+            * __RegistrationPage.js__ (stateless) -
+                * __RegistrationForm.js__ (stateful) - gets the _"error"_ from the __App.js__
+        * __Navigation.js__ (stateless)
+            * __Home.js__ (stateless)
+                * __NotFoundPage.js__ (stateless)
+                * __AddNom.js__ (stateful) - gets the _"error"_ from the __App.js__
+                * __NomList.js__ (stateful) gets the _"noms"_ from the __App.js__
+                    * __NomPage.js__ (stateful) context consumer from __App.js__
+                    * __NomItem.js__ (stateful) - context consumer from __App.js__
+                        * __EditNom.js__ (stateful) - context consumer from __App.js__
 
 
 
-### 7. Back-end Structure - Business Objects (to do later)
-* (Example) Users (database table)
+### 7. Back-end Structure - Business Objects
+* nom_users (database table)
     * id (auto-generated)
-    * username (email validation)
-    * password (at least 8 chars, at least one alpha and a special character validation)
+    * full name (user-generated)
+    * username (user-generated)
+    * password (at least one number, one lowercase and one uppercase letter at least eight characters that are letters, numbers or the underscore)
+    * date_created (auto-generated)
+
+* noms (database table)
+    * id (auto-generated)
+    * nom_name (user-generated)
+    * sub (user-generated)
+    * url (user-generated)
+    * description (user-generated)
+    * author (foreign key - nom_users id)
+    * date_created (auto-generated)
+    * style (user-selects from two options: "Nom" or "Recipe")
 
 
 
 ### 8. API Documentation (to do later)
 API Documentation details:
-* (Example) get all users
+* GET All Noms
+    * https://nomnoms-app.herokuapp.com/api/noms/
+
+* GET One Nom
+    * https://nomnoms-app.herokuapp.com/api/noms/12
+
+* POST Nom
+    * https://nomnoms-app.herokuapp.com/api/noms/
+        * JSON body
+        *   {
+                "nom_name": "Nature's Own 100% Whole Wheat Hot Dog Buns",
+                "sub": "bread",
+                "url": "https://www.naturesownbread.com/natures-own/100-whole-wheat-hot-dog-buns",
+                "description": "Each soft bun contains a whopping 22 grams of whole grains and 3 grams of fiber. They’re the perfect complement to your favorite hot dog or sausage.",
+                "author": 1,
+                "style": "Recipe"
+            }
+
+* POST User
+    * https://nomnoms-app.herokuapp.com/api/users
+        * JSON body
+        *   {  
+                "fullname": "Hello Day",
+                "username": "hello-day",
+                "password": "Nico0809!"
+            }
+
+* PATCH One Nom
+    * https://nomnoms-app.herokuapp.com/api/noms/12
+        * JSON body
+        *   {
+                "nom_name": "Nature's Own 100% Whole Wheat Hot Dog Buns",
+                "sub": "bread",
+                "url": "https://www.naturesownbread.com/natures-own/100-whole-wheat-hot-dog-buns",
+                "description": "New bread.",
+                "author": 1,
+                "style": "Nom"
+            }
+
+* DELETE One Nom
+    * https://nomnoms-app.herokuapp.com/api/noms/12
 
 
 
@@ -107,9 +171,17 @@ My Noms Page
 
 
 
-### 10. Development Roadmap (to do later)
+### 10. Development Roadmap
 This is v1.0 of the app, but future enhancements are expected to include:
-* (Example) add more functionality
+* Rate my Nom
+* Date when "Nom" or "Recipe" was last updated
+* Sort/Filter Nom:
+  * Alphabetically
+  * By "Nom" or "Recipe"
+  * By rating
+  * By date
+* Ability to upload an image to "Nom" or "Recipe"
+* Ability to export a "Nom" or "Recipe" into a PDF or printer  
 
 
 
