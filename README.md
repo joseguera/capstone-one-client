@@ -1,48 +1,50 @@
 # NomNoms App
-One line description of what this app is doing and who is it for
-
+NomNoms allows users to create recipes and modifications to foods based on their dietary choice.
 
 
 ### 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://nomnoms-app.herokuapp.com/
+(Example) You can access a working prototype of the React app here: https://nomnoms-app.vercel.app/ and Node app here: https://nomnoms-app.herokuapp.com/
 
 
-
-### 2. User Stories (to do now)
+### 2. User Stories
 This app is for two types of users: a visitor and a logged-in user
 
-###### (Example) Landing Page (Importance - High) (Est: 1h)
+###### Landing/Home Page
 * as a visitor
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
 
-###### (Example) Login Page (Importance - High) (Est: 3h)
+###### Login Page
 * As a returning register user
 * I want to enter my password and username to use this app,
 * So I can have access to my account.
 
-###### (Example) Sign Up (Importance - High)  (Est: 3h)
+###### Sign Up
 * As a visitor
 * I want to register to use this app
 * So I can create a personal account.
 
-###### (Example) Home Page (Importance - Medium)  (Est: 2h)
+###### My Noms Page
 * As a logged-in user,
-* I want to be able to preview the content of the app,
-* So i can decide what section I want to navigate to.
+* I want to be able to view the "My Noms" page of the app,
+* So I can decide if I want to create my own "noms" or edit and 
+* delete existing ones.
 
 
-
-### 3. Functionality (to do now)
+### 3. Functionality
 The app's functionality includes:
-* (Example) Every User has the ability to create an account
+* Every User has the ability to create an account
+* Every User has the ability to view the noms in the "My Noms" page
+* Every User has the ability to "Add" a nom
+* Every User has the ability to "Edit" a nom
+* Every User has the ability to "Delete" a nom
 
 
 
-### 4. Technology (done)
+### 4. Technology
 * Front-End: HTML5, CSS3, JavaScript ES6, React
-* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
-* Development Environment: Heroku, DBeaver
+* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, PostgreSQL 
+* Development Environment: Vercel, Heroku, DBeaver
 
 
 
