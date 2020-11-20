@@ -9,6 +9,13 @@
     background-color: #69acb8;
 }
 
+.NomPage {
+    width: 600px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
 .NomPage_heading {
     font-family: 'Orbitron', sans-serif;
     font-size: 36px;
