@@ -94,12 +94,16 @@ API Documentation details:
 
 
 
-### 9. Screenshots (to do later)
-(Example) Landing Page
+### 9. Screenshots
+Landing/Home Page
 :-------------------------:
-![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
-Register Page
-![Register Page](/github-images/screenshots/register-page-screenshot.png)
+![Landing/Home Page](/github-images/screenshots/home-page-screen.png)
+Login Page
+![Login Page](/github-images/screenshots/login-screen.png)
+Sign Up/Registration Page
+![Sign Up/Registration Page](/github-images/screenshots/register-screen.png)
+My Noms Page
+![My Noms Page](/github-images/screenshots/my-noms-screen.png)
 
 
 
@@ -109,7 +113,7 @@ This is v1.0 of the app, but future enhancements are expected to include:
 
 
 
-### 11. How to run it (done)
+### 11. How to run it
 Use command line to navigate into the project folder and run the following in terminal
 
 ##### Local React scripts
