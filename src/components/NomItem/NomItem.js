@@ -31,11 +31,7 @@ export default function NomItem(props) {
                     <div>
                         <h3>
                             <Link to={`/nom-page/${props.id}`}
-                                style={{
-                                    color: '#b37400',
-                                    textDecoration: 'none',
-                                    fontSize: 28,
-                                }}
+                                className='NomItem-title'
                             >
                                 {props.nom_name}
                             </Link>

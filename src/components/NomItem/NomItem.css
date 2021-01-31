@@ -23,6 +23,12 @@ font-family: 'Press Start 2P', cursive;
 font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace; */
 
+.NomItem-title {
+    color: #b37400;
+    text-decoration: none;
+    font-size: 28;
+}
+
 .NomItem__title:hover {
     margin: 0;
     color: #fff;   
@@ -42,4 +48,27 @@ color: #b00c0c;
     cursor: pointer;
     text-align: center;
     font-family: 'VT323', monospace;
+}
+
+@media screen and (max-width: 500px) {
+    .NomItem {
+        padding: 10px;
+        height: 100%;
+        padding-bottom: 20px;
+        width: 300px;
+    }
+
+    .NomItem .butts {
+        padding: 5px 20px;
+        font-size: 16px;
+        margin: 0 10px;
+    }  
+    
+    .NomItem-title {
+        font-size: 20px;
+    }
+
+    .NomItem_style {
+        font-size: 16px;
+    }
 }

@@ -36,10 +36,39 @@
     display: inline;
 }
 
+@media screen and (max-width: 750px) {
+
+    .nav-container {
+        width: 400px;
+    }
+    
+}
+
 @media screen and (max-width: 500px) {
 
     .nav-container {
-        width: 400px; /* Can be in percentage also */
+        width: 75%;
+        height: 75px;
+    }
+
+    .nav {
+        height: 100%;
+        padding-top: 5px;
+    }
+
+    .NavBar__logged-in {
+        height: 45px;
+        line-height: 38px;
     }
     
+    .links {
+        display: inline-block;
+        font-family: 'Orbitron', sans-serif;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+        width: 50%;
+        height: 25px;
+        line-height: 20px;
+    }
 }

@@ -159,16 +159,16 @@ class AddNom extends Component {
                     </div>                    
                     <div className='AddNom_buttons'>
                         <button 
+                            type='submit'
+                            className='butts'>
+                            Save
+                        </button>
+                        {' '}
+                        <button 
                             type='button'
                             onClick={this.handleClickCancel}
                             className='butts'>
                             Cancel
-                        </button>
-                        {' '}
-                        <button 
-                            type='submit'
-                            className='butts'>
-                            Save
                         </button>
                     </div>
                 </form>

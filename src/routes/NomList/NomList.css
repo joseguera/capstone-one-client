@@ -44,10 +44,33 @@ ul {
     font-family: 'Press Start 2P', cursive;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
 
     .main-list {
         width: 400px; /* Can be in percentage also */
     }
 }
-  
+ 
+@media screen and (max-width: 500px) {
+
+    .main-list {
+        width: 300px; /* Can be in percentage also */
+    }
+
+    .NomList_heading {
+        font-size: 32px;
+        padding-top: 15px;
+    }
+
+    .AddButton {
+        border: none;
+        padding: 15px;
+        font-size: 16px;
+        margin: 0 30px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+        font-weight: bold;
+    }
+}

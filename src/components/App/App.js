@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Header from '../Header/Header'
 import TokenService from '../../services/token-service'
 import Navigation from '../../components/Navigation/Navigation'
@@ -92,10 +92,66 @@ class App extends Component {
               <Route exact path='/' component={Home} />
               <Route path={'/login'} component={LoginPage} />
               <Route path={'/register'} component={RegistrationPage} />
-              <Route path={'/nomlist'} component={NomList} />
-              <Route path={'/nom-page/:nomId'} component={NomPage} />
-              <Route path={'/new-nom'} component={AddNom} />
-              <Route path={'/edit-nom/:nomId'} component={EditNom} />
+              <Route
+                path={'/nomlist'}
+                render={({ ...props }) => {
+                  return this.context.log || TokenService.hasAuthToken() ? (
+                    <NomList {...props} />
+                  ) : (
+                      <Redirect
+                        to={{
+                          pathname: '/',
+                          state: { from: props.location }
+                        }}
+                      />
+                    );
+                }}>
+              </Route>
+              <Route
+                path={'/nom-page/:nomId'}
+                render={({ ...props }) => {
+                  return this.context.log || TokenService.hasAuthToken() ? (
+                    <NomPage {...props} />
+                  ) : (
+                      <Redirect
+                        to={{
+                          pathname: '/',
+                          state: { from: props.location }
+                        }}
+                      />
+                    );
+                }}>
+              </Route>
+              <Route
+                path={'/new-nom'}
+                render={({ ...props }) => {
+                  return this.context.log || TokenService.hasAuthToken() ? (
+                    <AddNom {...props} />
+                  ) : (
+                      <Redirect
+                        to={{
+                          pathname: '/',
+                          state: { from: props.location }
+                        }}
+                      />
+                    );
+                }}>
+              </Route>
+              <Route
+                path={'/edit-nom/:nomId'}
+                render={({ ...props }) => {
+                  return this.context.log || TokenService.hasAuthToken() ? (
+                    <EditNom {...props} />
+                  ) : (
+                      <Redirect
+                        to={{
+                          pathname: '/',
+                          state: { from: props.location }
+                        }}
+                      />
+                    );
+                }}>
+              </Route>
               <Route component={NotFoundPage} />
             </Switch>
           </NomNomsContext.Provider>

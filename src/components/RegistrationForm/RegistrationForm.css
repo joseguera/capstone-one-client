@@ -1,10 +1,18 @@
-.form-body, .RegistrationPage, .LoginPage {
+.RegistrationPage, .LoginPage {
     width: 700px; /* Can be in percentage also. */
     height: auto;
     margin: 0 auto;
     position: relative;
     text-align: center;
     padding-bottom: 20px;
+}
+
+.form-body {
+    font-family: 'Open Sans Condensed', arial, sans;
+	width: 400px;
+	padding: 30px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .register, .login {
@@ -17,21 +25,57 @@
     color: maroon;
     font-family: 'VT323', monospace;
     font-size: 24px;
-    margin-bottom: 10px;
-    width: 676px;
 }
 
 .input {
     margin: 0;
 }
 
+.butts {
+	margin-bottom: 30px;
+}
+
+@media screen and (max-width: 750px) {
+
+	.form-body {
+		margin: 0 auto;
+		width: 100%;
+		display: table-cell;
+	}
+
+	.RegistrationPage, .LoginPage {
+		margin: auto;
+		width: 400px;
+		text-align: center;
+	}
+
+	.butts {
+		margin-top: 10px;
+	}
+    
+}
+
 @media screen and (max-width: 500px) {
 
-    .form-body, .RegistrationPage, .LoginPage {
-        width: 400px; /* Can be in percentage also */
-    }
-  
-    .fields {
-        width: 376px;
-    }   
+	.form-body {
+        margin: 0 auto;
+		width: 100%;
+		display: table-cell;
+	}
+
+	.RegistrationPage, .LoginPage {
+		margin: auto;
+		width: 80%;
+		text-align: center;
+	}
+
+	.register, .login {
+		font-size: 32px;
+        padding-top: 15px;
+	}
+
+	.butts {
+		margin-top: 10px;
+	}
+    
 }

@@ -146,6 +146,8 @@ class EditNom extends Component {
                         type='hidden'
                         name='id'
                     />
+
+                    
                     <div className='edit-fields'>
                         <label htmlFor='nom_name'>
                             Nom Name
@@ -230,15 +232,15 @@ class EditNom extends Component {
                         </select>
                     </div>
                     <div className='EditNom__buttons'>
+                        <button type='submit' className='butts'>
+                            Save
+                        </button>
+                        {' '}
                         <button 
                             type='button'
                             onClick={this.handleClickCancel}
                             className='butts'>
                             Cancel
-                        </button>
-                        {' '}
-                        <button type='submit' className='butts'>
-                            Save
                         </button>
                     </div>
                 </form>

@@ -1,18 +1,63 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+import TokenService from '../../services/token-service'
 import './Navigation.css'
 
 
-function Navigation() {
-    return (
-        <div className='nav-container'>
-            <ul className='nav'>
-                <li className='nav-items'><Link to={'/'} className='links'>Home Page</Link></li>
-                {' '}
-                <li className='nav-items'><Link to={'/nomlist'} className='links'>My Noms</Link></li>
-            </ul>
-        </div>
-    )
+class Navigation extends Component {
+    handleNavBar = () => {
+        TokenService.clearAuthToken()
+        window.location = '/'
+    }
+
+    renderLogoutNavBar() {
+        return (
+            <div className='NavBar__logged-in'>
+                <li className='nav-items'>
+                    <a
+                        className='links'
+                        onClick={this.handleNavBar}
+                        href='/'>
+                        Home Page
+                    </a>
+                </li>
+            </div>
+        )
+    }
+
+    renderLoginNavBar() {
+        return (
+            <div className='NavBar__not-logged-in nav-container'>
+                <li className='nav-items'>
+                    <a
+                        href='/'
+                        className='links'
+                    >
+                        Home Page
+                </a>
+                </li>
+                <li className='nav-items'>
+                    <a
+                        href='/nomlist'
+                        className='links'
+                    >
+                        My Noms
+                </a>
+                </li>
+            </div>
+        )
+    }
+
+    render() {
+        return (
+            <div className='header-container'>
+                <ul className='nav'>
+                    {!TokenService.hasAuthToken()
+                        ? this.renderLogoutNavBar()
+                        : this.renderLoginNavBar()}
+                </ul>
+            </div>
+        )
+    }
 }
 
 export default Navigation;

@@ -19,9 +19,25 @@
     color: #333;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
 
     .home-body {
         width: 400px; /* Can be in percentage also */
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .home-body {
+        width: 300px; /* Can be in percentage also */
+        padding-top: 20px;
+        font-size: 14px;
+    }
+
+    .home-heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin-top: 15px;
+        color: #000000;
     }
 }

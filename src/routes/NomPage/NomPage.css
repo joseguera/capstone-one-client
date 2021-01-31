@@ -57,13 +57,30 @@
     font-family: 'VT323', monospace;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
 
     .main-nom-page {
         width: 400px; /* Can be in percentage also */
     }
 
     .NomPage {
-        width: 350px; /* Can be in percentage also. */
+        width: 75%; /* Can be in percentage also. */
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .main-nom-page {
+        width: 300px; /* Can be in percentage also */
+    }
+
+    .NomPage {
+        width: 75%; /* Can be in percentage also. */
+    }
+
+    .NomPage_heading {
+        font-size: 20px;
+        margin-top: 20px;
+        padding-top: 20px;
     }
 }

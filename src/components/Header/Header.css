@@ -66,9 +66,9 @@
 
 
 /* start of desktop and large table styles */
-
-@media screen and (max-width: 500px) {
-
+  
+@media screen and (max-width: 750px) {
+  
   .header-container {
     width: 400px; /* Can be in percentage also */
   }
@@ -76,6 +76,37 @@
   .Header {
     display: inline-block;
   }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .header-container {
+    width: 300px; /* Can be in percentage also */
+    padding: 20px 10px 0px 10px;
+  }
+
+  .Header {
+    display: inline-block;
+  }
+
+  .site-title {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 32px;
+  }
   
+  .first-N {
+    font-size: 50px;
+    color: maroon;
+  }
+  
+  .last-N {
+    font-size: 50px;
+    color: #b37400;
+  }
+
+  .reg-links {
+    font-size: 16px;
+  }
 }
   

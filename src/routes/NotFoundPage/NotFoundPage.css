@@ -22,11 +22,25 @@
 
 /* start of desktop styles */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
     /* start of large tablet styles */
 
     .error-body {
         width: 400px; /* Can be in percentage also */
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    /* start of large tablet styles */
+
+    .error-body {
+        width: 300px; /* Can be in percentage also */
+        margin-top: 30px;
+    }
+
+    .error-heading {
+        font-size: 24px;
     }
     
 }
